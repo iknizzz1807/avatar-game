@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatar Game Client</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      #game-container {
+        display: flex;
+        gap: 20px;
+      }
+      #main-game {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      canvas {
+        border: 2px solid #333;
+        background-color: #e0f8e0;
+      }
+      #login-view {
+        padding: 20px;
+        border: 1px solid #ccc;
+        background: #fff;
+      }
+      #game-view {
+        display: none; /* Ban đầu ẩn đi */
+      }
+      #chat-container {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+      #chat-log {
+        height: 450px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        overflow-y: scroll;
+        background: #fff;
+        margin-bottom: 10px;
+      }
+      #chat-form {
+        display: flex;
+      }
+      #chat-input {
+        flex-grow: 1;
+      }
+      #status {
+        margin-top: 10px;
+        font-style: italic;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container">
+      <div id="main-game">
+        <!-- Vùng đăng nhập -->
+        <div id="login-view">
+          <h3>Join Game</h3>
+          <form id="login-form">
+            <input
+              type="text"
+              id="player-name-input"
+              placeholder="Enter your name"
+              required
+            />
+            <button type="submit">Join</button>
+          </form>
+          <div id="status">Not connected.</div>
+        </div>
+
+        <!-- Vùng game chính (canvas và chat) -->
+        <div id="game-view">
+          <canvas id="game-canvas" width="640" height="480"></canvas>
+          <form id="chat-form">
+            <input
+              type="text"
+              id="chat-input"
+              placeholder="Type a message..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Khung hiển thị chat -->
+      <div id="chat-container">
+        <h3>Chat Log</h3>
+        <div id="chat-log"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
