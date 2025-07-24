@@ -34,6 +34,7 @@ A simple 2D multiplayer game project built with Go and WebSockets, allowing play
 
 2.  **Run the Client (Frontend):**
     - Serve `frontend` folder (recommend).
-    - Open the `client/index.html` file in your web browser (you can open multiple tabs to simulate multiple players). (not recommends).
+    - Open the `client/index.html` file in your web browser (not recommend).
+    - You can open multiple tabs to simulate multiple players.
     - Enter a player name and click "Join".
     - Use the arrow keys to move.
